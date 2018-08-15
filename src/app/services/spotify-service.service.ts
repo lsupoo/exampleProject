@@ -10,7 +10,7 @@ export class spotifyService{
   private artistUrl: string;
   private albumsUrl: string;
   private albumUrl: string;
-  private access_token: string = 'BQCbaU8S3gESEHw75ASJJEHyx6ALcr3q1ln44n-IJwQtV2vnmSy2GX_lCywjfrOnJUJ2G4R1xtV28-RBSmaVpH26es_RfeRG8sHOrA4Zb9FJiGGWwMOIPN3oSmTGl_eqvJS-IaiVtyDVIlMwK0BdUzwz';
+  private access_token: string = 'BQDKRaO66H25Y4HQfE2epsdbeRmeR5OCLGvKdXVy7z2LveeDl_BnTDZ9r9WjS9XFyR42_QtLQtUzHfCcy18nrQMe0R31I-I-osF3qJ28haDW9jgCIpUrdmFdDArTWfKKW0_6ePAoGizH9uYiJHTmpaY4';
   constructor (private _http: HttpClient){
   }
 
@@ -18,7 +18,7 @@ export class spotifyService{
 
       let headers = new HttpHeaders().set('Authorization', 'Bearer ' + this.access_token);
 
-      this.searchUrl = 'https://api.spotify.com/v1/search?q='+ str + '&type=artist&market=US&limit=20&offset=0';
+      this.searchUrl = 'https://api.spotify.com/v1/search?q='+ str + '&type=artist&market=US&limit=5&offset=0';
       return this._http.get(this.searchUrl, {headers: headers }).pipe(
       map(res => res))
   }
